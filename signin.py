@@ -63,6 +63,6 @@ if __name__ == "__main__":
   else:
     send_content = signin_log
     print(signin_log)
-  params = {'title': 'hao4k 每日签到结果通知：', 'content': send_content, 'token': sckeys }
+  params = {'title': 'hao4k 每日签到结果通知：', 'content': send_content, 'token': sckey}
   requests.post(send_url, params=params)
   print('已通知 server 酱')
