@@ -7,7 +7,7 @@ username = os.environ["HAO4K_USERNAME"]
 password = os.environ["HAO4K_PASSWORD"]
 # 添加 server 酱通知
 sckey = os.environ["SERVERCHAN_SCKEY"]
-send_url = "https://sctapi.ftqq.com/%s.send" % (sckey)
+send_url = "http://www.pushplus.plus/send/"
 send_content = 'Server ERROR'
 
 # hao4k 签到 url
@@ -63,6 +63,6 @@ if __name__ == "__main__":
   else:
     send_content = signin_log
     print(signin_log)
-  params = {'text': 'hao4k 每日签到结果通知：', 'desp': send_content}
+  params = {'title': 'hao4k 每日签到结果通知：', 'content': send_content, 'token': sckeys }
   requests.post(send_url, params=params)
   print('已通知 server 酱')
